@@ -1,0 +1,19 @@
+<script>
+// Function to retrieve the country code based on IP geolocation
+function getCountryCode() {
+  // Get the user's IP address
+  const userIPAddress = '192.168.1.82'; // Replace with the actual IP address
+
+  // Perform IP geolocation using geoip-lite library
+  const geo = require('geoip-lite');
+  const geoData = geo.lookup(userIPAddress);
+
+  // Extract the country code from the geolocation data
+  const countryCode = geoData.country;
+  console.log('Country Code:', countryCode);
+}
+
+// Call the function to get the country code
+getCountryCode();
+
+</script>
